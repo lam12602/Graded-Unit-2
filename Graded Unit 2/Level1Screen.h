@@ -2,6 +2,7 @@
 #include "Screen.h"
 #include <SFML/Graphics.hpp>
 #include "Player.h"
+#include "Enemy.h"
 class Level1Screen :
     public Screen
 {
@@ -13,6 +14,8 @@ public:
 private:
 
     Player player;
+
+    Enemy enemy;
 
     bool gameRunning;
 

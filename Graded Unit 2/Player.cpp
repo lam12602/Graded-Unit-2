@@ -7,10 +7,11 @@ Player::Player()
 	, twoFramOldPos(100, 300)
 	, velocity()
 	, acceleration()
+	, health(200)
 {
-	sprite.setTexture(AssetManager::RequestTexture("Assets/Graphics/PlayerStand.png"));
+	sprite.setTexture(AssetManager::RequestTexture("Assets/Graphics/Player.png"));
 
-	collisionoffset = sf::Vector2f(0, 30);
+	collisionoffset = sf::Vector2f(0, 0);
 	collisionscale = sf::Vector2f(0.5f, 0.5f);
 }
 
@@ -32,13 +33,22 @@ void Player::HandelCollision(SpriteObject& other)
 {
 }
 
+void Player::SetHealth(int change)
+{
+	health = health + change;
+	if (health <= 0)
+	{
+		SetAlive(false);
+	}
+}
+
 void Player::UpdateAcceleration()
 {
 	const float ACCEL = 1000;
 	
 
 	acceleration.x = 0;
-	
+	acceleration.y = 0;
 
 	//This will move the player in the direction of the key presses using the acceleration const
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
