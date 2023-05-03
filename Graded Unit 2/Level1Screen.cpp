@@ -1,4 +1,4 @@
-#pragma once
+
 #include "Level1Screen.h"
 #include "AssetManager.h"
 #include "Game.h"
