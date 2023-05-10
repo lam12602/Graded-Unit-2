@@ -11,7 +11,9 @@ Level1Screen::Level1Screen(Game* newGamepointer)
 	, player()
 	, enemy()
 	, gameRunning(true)
+	, timer()
 {
+	
 }
 
 void Level1Screen::Update(sf::Time frameTime)
@@ -38,4 +40,5 @@ void Level1Screen::Draw(sf::RenderTarget& target)
 {
 	player.Draw(target);
 	enemy.Draw(target);
+	timer.Draw(target);
 }

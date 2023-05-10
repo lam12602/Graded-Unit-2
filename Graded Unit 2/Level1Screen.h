@@ -3,6 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "Player.h"
 #include "Enemy.h"
+#include "Timer.h"
 class Level1Screen :
     public Screen
 {
@@ -16,6 +17,8 @@ private:
     Player player;
 
     Enemy enemy;
+
+    Timer timer;
 
     bool gameRunning;
 
